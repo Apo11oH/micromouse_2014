@@ -25,6 +25,23 @@ void Traversal::initTraversal()
   // Initialize start cell by setting the wall in E, S, and W 
   // 1 1 1 0 1 1 1 0 
   traversal[BOARD_MAX-1][0] = 0xEE; 
+  // Initializing all OutsideWalls
+  for(int j=0; j<BOARD_MAX; j++)
+    {
+      traversal[0][j] = 0x08;
+    }
+  for(int j=0; j<BOARD_MAX; j++)
+    {
+      traversal[BOARD_MAX-1][j] = 0x02;
+    }
+  for(int j=0; j<BOARD_MAX; j++)
+    {
+      traversal[j][0] = 0x00;
+    }
+  for(int j=0; j<BOARD_MAX; j++)
+    {
+      traversal[j][BOARD_MAX-1] = 0x04;
+    }
 }
 
 /*
