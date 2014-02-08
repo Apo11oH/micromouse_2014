@@ -28,20 +28,27 @@ void Traversal::initTraversal()
   // Initializing all OutsideWalls
   for(int j=0; j<BOARD_MAX; j++)
     {
-      traversal[0][j] = 0x08;
+      traversal[0][j] = 0x01;
     }
   for(int j=0; j<BOARD_MAX; j++)
     {
-      traversal[BOARD_MAX-1][j] = 0x02;
+      traversal[BOARD_MAX-1][j] = 0x04;
     }
   for(int j=0; j<BOARD_MAX; j++)
     {
-      traversal[j][0] = 0x00;
+      traversal[j][0] = 0x08;
     }
   for(int j=0; j<BOARD_MAX; j++)
     {
-      traversal[j][BOARD_MAX-1] = 0x04;
+      traversal[j][BOARD_MAX-1] = 0x02;
     }
+  // Initializeing corners
+  traversal[BOARD_MAX-1][BOARD_MAX-1] = 0x06;
+  traversal[0][0] = 0x09;
+  traversal[0][BOARD_MAX-1] = 0x03;
+  // Initialize start cell by setting the wall in E, S, and W 
+  // 1 1 1 0 1 1 1 0 
+  traversal[BOARD_MAX-1][0] = 0xEE;
 }
 
 /*
