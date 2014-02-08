@@ -52,6 +52,7 @@ void Navigation::initNavHoming()
  * Input: Traversal - trav
  * Return: None
  */
+/*
 void updateFloodfill(Traversal trav)
 {
   bool foundFlag;
@@ -74,6 +75,7 @@ void updateFloodfill(Traversal trav)
   
 
 }
+*/
 
 
 /*

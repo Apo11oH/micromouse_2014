@@ -11,7 +11,7 @@ using namespace BotConsts;
 int main(int argc, 	const char* argv[])
 {
   Traversal *traversal = new Traversal();
-  Navigation *navigation = new Navigation();
+  //Navigation *navigation = new Navigation();
   //Graph *graph = new Graph();
 
   cout << "Traversal map" << endl;
@@ -19,10 +19,12 @@ int main(int argc, 	const char* argv[])
   traversal->printTraversalMap();
   cout << endl;
 
+  /*
   cout << "Floodfill map" << endl;
   navigation->initNaviGoal();
   navigation->printFloodfillMap();
   cout << endl;
+  */
 
   /*
   cout << "Graph map" << endl;
