@@ -1,3 +1,6 @@
-micromouse_2014
+Micromouse 2014: Team S.H.I.E.L.D. "Avengers"
 ===============
-h
+## Team Lead
+Austin
+## Co-lead
+Some dude
