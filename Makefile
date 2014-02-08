@@ -11,9 +11,10 @@ testTraversal: Traversal.o
 
 testNavigation: Navigation.o
 
+Navigation.o: Traversal.o Navigation.hpp 
+
 Traversal.o: Traversal.hpp
 
-Navigation.o: Navigation.hpp
 
 Graph.o: Graph.hpp
 

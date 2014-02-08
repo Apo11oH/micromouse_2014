@@ -52,10 +52,10 @@ void Navigation::initNavHoming()
  * Input: Traversal - trav
  * Return: None
  */
-/*
-void updateFloodfill(Traversal trav)
+void Navigation::updateFloodfill(Traversal trav)
 {
   bool foundFlag;
+  int temp;
 
   for(int i=0; i<CELL_MAX-1; i++)
   {
@@ -67,20 +67,36 @@ void updateFloodfill(Traversal trav)
         if(floodfill[k][j]==i)
         {
           foundFlag = true;
-
+          temp = trav.getTraversalVal(k, j);
+          // Check North 
+          if(j > 0)
+            if((floodfill[j-1][k]==CELL_MAX)&&((temp&0x01) != 0x01))
+              floodfill[j-1][k] = floodfill[j][k]+1;
+          // Check East 
+          if(k < BOARD_MAX-1)
+            if((floodfill[j][k+1]==CELL_MAX) && ((temp&0x02) != 0x02))
+              floodfill[j][k+1] = floodfill[j][k]+1;
+          // Check South 
+          if(j < BOARD_MAX-1)
+            if((floodfill[j+1][k]==CELL_MAX) && ((temp&0x04) != 0x04))
+              floodfill[j+1][k] = floodfill[j][k]+1;
+          // Check West 
+          if(k > 0)
+            if((floodfill[j][k-1]==CELL_MAX)&&((temp&0x08) != 0x08))
+              floodfill[j][k-1] = floodfill[j][k]+1;
         }
       }
     }
+    if(!foundFlag){ break; }
   }
   
 
 }
-*/
 
 
 /*
- * Based on the potential map, determine which direction to move 
- * next. Low potential value have priority.
+ * Based on the floodfill map, determine which direction to move 
+ * next. Low floodfill value have priority.
  * Input: int trav - traversal value for the cell to be checked 
  * Return: 0 for North, 1 for East, 2 for South, 3 for West 
  */
