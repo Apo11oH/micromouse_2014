@@ -3,8 +3,12 @@
  */
 
 #include <queue>
+#include "BotConstants.hpp"
+#include "Traversal.hpp"
+#include "Navigation.hpp"
 
 using namespace std;
+using namespace BotConsts;
 
 /*
  * Comparitor override for the priority_queue used when comparing edges
@@ -23,7 +27,7 @@ class EdgeCostCmp
  * Input:  
  * Output: 
  */
-void dijkstraMatrix(int traversal [][BOARD_MAX], int flood[][BOARD_MAX]){
+void dijkstraMatrix(Traversal trav, Navigation nav){ 
   int dist[BOARD_MAX][BOARD_MAX];
   int previous[BOARD_MAX][BOARD_MAX];
 
@@ -46,3 +50,6 @@ void dijkstraMatrix(int traversal [][BOARD_MAX], int flood[][BOARD_MAX]){
 int dijkstraGraph(Node* start)
 {
   priority_queue<Node*, vector<Node*>, VertexDistCmp> pQueue;
+
+  return 0;
+}
