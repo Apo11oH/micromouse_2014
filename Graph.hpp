@@ -67,14 +67,7 @@ class Graph{
     /*
      * Default Constructor
      */
-    Graph()
-    {
-      for(int i=0; i<BOARD_MAX*BOARD_MAX; i++)
-      {
-        nodes[i]->setIndex(BOARD_MAX*BOARD_MAX);
-      }
-      start = nodes[(BOARD_MAX-1)*(BOARD_MAX-1) + 0];
-    }
+    Graph();
 
     void loadMaze(const int[][BOARD_MAX] maze);
     void dijkstra(int start, int end, bool isSearching);
