@@ -13,50 +13,6 @@
 using namespace std;
 using namespace BotConsts;
 
-class Edge{
-  private:
-    int from;
-    int to;
-    int cost;
-    bool checked;
-
-  public:
-    Edge():from(-1),to(-1),cost(256),checked(false){}
-    Edge(int f, int t):from(f),to(t),cost(256),checked(false){}
-    Edge(int f, int t, int c):from(f),to(t),cost(c),checked(false){}
-
-    int getTo(int f) const { return to; }
-    int getCost() const { return cost; }
-    void setCost(int c) { cost = c; }
-    bool isChecked() const { return checked; }
-    void setChecked(bool c){ checked = c; }
-}
-
-class Node{
-  private:
-    int index;
-    vector<Edge*> edges;
-    int cost;
-    bool checked;
-    int from;
-
-  public:
-    Node():index(-1),cost(256),checked(false),from(-1){}
-    Node(int i, int c):index(i), cost(c){}
-    ~Node();
-
-    int getIndex() const { return index; }
-    void addEdge(Edge* e);
-    const vector<Edge*> &getEdges() const { return edges; }
-    int getCost() const { return cost; }
-    void setCost(int c) { cost = c; }
-    bool getChecked() const { return checked; }
-    void setChecked(bool c) { checked = c; }
-    int getFrom() const { return from; }
-    void setFrom(int f) { from = f; }
-};
-
-
 class Graph{
   private: 
     Node* start;
@@ -75,7 +31,5 @@ class Graph{
     const Route getRoute(int start, int end) const;
     void printGraph();
 };
-
-
 
 #endif

@@ -12,23 +12,32 @@
 using namespace std;
 using namespace BotConsts;
 
-Node::~Node(){
-}
-
-void Node::addEdge(Edge* e){
-
-}
-
 Graph::Graph(){
   for(int i=0; i<BOARD_MAX*BOARD_MAX; i++)
   {
-    nodes[i]->setIndex(BOARD_MAX*BOARD_MAX);
+    nodes[i] = new Node(i, -1);
   }
   start = nodes[(BOARD_MAX-1)*(BOARD_MAX-1) + 0];
 }
 
 void Graph::loadMaze(const int[][BOARD_MAX] maze){
-
+  for(int i=0; i<BOARD_MAX; i++)
+  {
+    for(int j=0; j<BOARD_MAX; i++)
+    {
+      if((maze[i][j] & 0xf0) == 0xf0)
+      {
+        // North
+        // North-East
+        // East
+        // South-East
+        // South
+        // South-West
+        // West
+        // North-West
+      }
+    }
+  }
 }
 
 void dijkstra(int start, int end, bool isSearching){
