@@ -13,6 +13,17 @@
 using namespace std;
 using namespace BotConsts;
 
+typedef union{
+  unsigned bpat:4;
+  struct {
+    unsigned NORTH:1;
+    unsigned EAST:1;
+    unsigned SOUTH:1;
+    unsigned WEST:1;
+  } dir;
+} Wall;
+
+
 class Node{
   private:
     int index;
@@ -20,12 +31,7 @@ class Node{
     int cost;
     bool checked;
     int from;
-    struct {
-      unsigned NORTH:1;
-      unsigned EAST:1;
-      unsigned SOUTH:1;
-      unsigned WEST:1;
-    } wall;
+    Wall wall;
 
   public:
     /*
@@ -33,10 +39,10 @@ class Node{
      */
     Node():index(-1),cost(256),checked(false),from(-1)
     {
-      wall.NORTH = 0;
-      wall.EAST = 0;
-      wall.SOUTH = 0;
-      wall.WEST = 0;
+      wall.dir.NORTH = 0;
+      wall.dir.EAST = 0;
+      wall.dir.SOUTH = 0;
+      wall.dir.WEST = 0;
     }
 
     /*
@@ -46,10 +52,10 @@ class Node{
      */
     Node(int i):index(i), cost(256), checked(false), from(-1)
     {
-      wall.NORTH = 0;
-      wall.EAST = 0;
-      wall.SOUTH = 0;
-      wall.WEST = 0;
+      wall.dir.NORTH = 0;
+      wall.dir.EAST = 0;
+      wall.dir.SOUTH = 0;
+      wall.dir.WEST = 0;
     }
     
     /*
@@ -60,10 +66,10 @@ class Node{
      */
     Node(int i, int c):index(i), cost(c), checked(false), from(-1)
     {
-      wall.NORTH = 0;
-      wall.EAST = 0;
-      wall.SOUTH = 0;
-      wall.WEST = 0;
+      wall.dir.NORTH = 0;
+      wall.dir.EAST = 0;
+      wall.dir.SOUTH = 0;
+      wall.dir.WEST = 0;
     }
 
     /*
@@ -148,6 +154,13 @@ class Node{
      * Output: wall value of the given direction 
      */
     unsigned getWall(int dir);
+
+    /*
+     * Get the wall pattern
+     * Input: Nothing
+     * Output: The wall pattern
+     */
+    unsigned getWallPat() { return wall.bpat; }
 };
 
 #endif

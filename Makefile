@@ -6,8 +6,10 @@ LDFLAGS=-g
 
 avengers: Traversal.o Navigation.o Graph.o
 
+testAll: testEdge testNode testTraversal 
+
 testTraversal: Traversal.o
-	g++ -isystem ${GTEST_DIR}/include -pthread gtest_main.cc Traversal.o traversal_unittest.cc libgtest.a -o traversal_unittest
+	g++ -isystem ${GTEST_DIR}/include -pthread gtest_main.cc Node.o Traversal.o traversal_unittest.cc libgtest.a -o traversal_unittest
 	./traversal_unittest
 
 testEdge: Edge.hpp
@@ -25,7 +27,7 @@ testNavigation: Navigation.o
 
 Navigation.o: Traversal.o Navigation.hpp 
 
-Traversal.o: Traversal.hpp
+Traversal.o: Node.o Traversal.hpp
 
 Node.o: Edge.o Node.hpp
 

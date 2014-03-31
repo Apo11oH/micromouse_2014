@@ -9,6 +9,7 @@
 
 #include <vector>
 #include "BotConstants.hpp"
+#include "Node.hpp"
 
 using namespace BotConsts;
 
@@ -23,6 +24,9 @@ class Traversal{
      *  | ...................................... |
      *  | ...................................... |
      * 240 241 242 243 245  .....  252 253 254 255
+     *
+     * (x, y) -> index:
+     *    index = y * BOARD_MAX + x
      */
     vector<Node*> nodes;
 
@@ -42,14 +46,14 @@ class Traversal{
     /*
      * Checks the sensor values to see if there is a wall or not and record
      * the result. Based on the values, either calls setWall or setSeen.
-     * Input: int curDirec - current direction that the bot is facing
+     * Input: int bDir - current direction that the bot is facing
      *        int fSen - front sensor value 
      *        int rSen - right sensor value 
      *        int lSen - left sensor value 
-     *        int index - current node index 
+     *        int i - current node index 
      * Return: None
      */
-    void evalNode(int curDirec, int fSen, int rSen, int lSen, int index);
+    void evalNodeWall(int bDir, int fSen, int rSen, int lSen, int i);
 
     /*
      * Return the traversal map
@@ -59,11 +63,25 @@ class Traversal{
     const vector<Node*> &getTraversalMap() const { return nodes; }
 
     /*
-     * Print information regarding a specific traversal cell
-     * Input: int i - node index 
-     * Return: None
+     * Returns node at the specified index
+     * Input: int i - index of the node
+     * Output: The node
      */
-    void printTraversalVal(int i);
+    Node* getNode(int i) { return nodes[i]; }
+
+    /*
+     * Print the node cost used in the floodfill algorithm 
+     * Input: Nothing 
+     * Return: Nothing 
+     */
+    void printFloodFillCost();
+
+    /*
+     * Print the wall value for each node
+     * Input: Nothing 
+     * Return: Nothing 
+     */
+    void printAllWalls();
 };
 
 #endif

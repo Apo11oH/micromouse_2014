@@ -13,7 +13,7 @@ namespace BotConsts
     const int LEFT_THRESH = 2000;
     const int GOAL_X = BOARD_MAX/2-1;
     const int GOAL_Y = BOARD_MAX/2-1; 
-    const int CELL_MAX = BOARD_MAX * BOARD_MAX + 1;
+    const int CELL_MAX = BOARD_MAX * BOARD_MAX;
     const int DIR_NORTH = 0x01;
     const int DIR_EAST = 0x02;
     const int DIR_SOUTH = 0x04;

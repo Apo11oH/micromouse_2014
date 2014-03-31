@@ -140,3 +140,22 @@ TEST(Node, Wall_set_ALL_reset_N_S)
     ASSERT_EQ(0, node->getWall(DIR_SOUTH));  
     ASSERT_EQ(1, node->getWall(DIR_WEST));  
 }
+
+TEST(Node, Wall_pattern_default)
+{
+    Node* node = new Node(0);
+    unsigned pat = 0x00;
+
+    ASSERT_EQ(pat, node->getWallPat());
+}
+
+TEST(Node, Wall_pattern_modified)
+{
+    Node* node = new Node(0);
+    unsigned pat = 0x03;
+
+    node->setWall(1, DIR_NORTH);
+    node->setWall(1, DIR_EAST);
+
+    ASSERT_EQ(pat, node->getWallPat());
+}

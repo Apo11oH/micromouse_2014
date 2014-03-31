@@ -36,10 +36,10 @@ void Node::setWall(unsigned b, int dir)
 {
   switch(dir)
   {
-    case DIR_NORTH: wall.NORTH = b; break;
-    case DIR_EAST: wall.EAST = b; break;
-    case DIR_SOUTH: wall.SOUTH = b; break;
-    case DIR_WEST: wall.WEST = b; break;
+    case DIR_NORTH: wall.dir.NORTH = b; break;
+    case DIR_EAST: wall.dir.EAST = b; break;
+    case DIR_SOUTH: wall.dir.SOUTH = b; break;
+    case DIR_WEST: wall.dir.WEST = b; break;
   }
 }
 
@@ -52,10 +52,10 @@ unsigned Node::getWall(int dir)
 {
   switch(dir)
   {
-    case DIR_NORTH: return wall.NORTH;
-    case DIR_EAST: return wall.EAST;
-    case DIR_SOUTH: return wall.SOUTH;
-    case DIR_WEST: return wall.WEST;
+    case DIR_NORTH: return wall.dir.NORTH;
+    case DIR_EAST: return wall.dir.EAST;
+    case DIR_SOUTH: return wall.dir.SOUTH;
+    case DIR_WEST: return wall.dir.WEST;
     default: return -1;
   }
 }

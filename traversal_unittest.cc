@@ -8,105 +8,128 @@ using namespace BotConsts;
 
 TEST(Traversal, DefaultConstructor)
 {
+    unsigned pat = 0x0E;
     Traversal *traversal = new Traversal();
     traversal->initTraversal();
-    ASSERT_EQ(0x00, traversal->getTraversalVal(0, 0));
-    ASSERT_EQ(0xEE, traversal->getTraversalVal(0, BOARD_MAX-1)); 
+    for(int i=0; i<CELL_MAX; i++)
+    {
+        ASSERT_EQ(256, (traversal->getNode(i))->getCost());
+    }
+    // Checking x coordinate of start position
+    ASSERT_EQ(0, (CELL_MAX-BOARD_MAX)%BOARD_MAX);
+    // Checking y coordinate of start position
+    ASSERT_EQ(15, (CELL_MAX-BOARD_MAX)/BOARD_MAX);
+    ASSERT_EQ(pat, (traversal->getNode(CELL_MAX-BOARD_MAX))->getWallPat());
 }
-
-
 
 TEST(Traversal, setWallAt_1_1_WhenDirecNorth)
 {
-    int direc = 0;
+    int i = 1*BOARD_MAX+1;
+    unsigned pat = 0x09;
     Traversal *traversal = new Traversal();
     traversal->initTraversal();
 
-    traversal->setWall(direc, 1, 1);
-    
-    ASSERT_EQ(0x11, traversal->getTraversalVal(1, 1)); 
-    ASSERT_EQ(0x44, traversal->getTraversalVal(1, 0)); 
+    // Set wall in North and West (00001001)
+    traversal->evalNodeWall(DIR_NORTH, FRONT_THRESH+1, RIGHT_THRESH-1, 
+            LEFT_THRESH+1, i);
+    ASSERT_EQ(pat, traversal->getNode(i)->getWallPat());
 }
 
 TEST(Traversal, setWallAt_0_0_WhenDirecNorth)
 {
-    int direc = 0;
+    int i = 0*BOARD_MAX+0;
+    unsigned pat = 0x0B;
     Traversal *traversal = new Traversal();
     traversal->initTraversal();
 
-    traversal->setWall(direc, 0, 0);
-    
-    ASSERT_EQ(0x11, traversal->getTraversalVal(0, 0));
-    ASSERT_EQ(0x00, traversal->getTraversalVal(0, 1));
+    // Set wall in North, East, and West (00001011)
+    traversal->evalNodeWall(DIR_NORTH, FRONT_THRESH+1, RIGHT_THRESH+1, 
+            LEFT_THRESH+1, i);
+    ASSERT_EQ(pat, traversal->getNode(i)->getWallPat());
 }
-
 
 TEST(Traversal, setWallAt_1_1_WhenDirecEast)
 {
-    int direc = 1;
+    int i = 1*BOARD_MAX+1;
+    unsigned pat = 0x03;
     Traversal *traversal = new Traversal();
     traversal->initTraversal();
 
-    traversal->setWall(direc, 1, 1);
-    
-    ASSERT_EQ(0x22, traversal->getTraversalVal(1, 1));
-    ASSERT_EQ(0x88, traversal->getTraversalVal(2, 1));
+    // Set wall in North and East (00000011)
+    traversal->evalNodeWall(DIR_EAST, FRONT_THRESH+1, RIGHT_THRESH-1, 
+            LEFT_THRESH+1, i);
+    ASSERT_EQ(pat, traversal->getNode(i)->getWallPat());
 }
 
 TEST(Traversal, setWallAt_MAX_1_WhenDirecEast)
 {
-    int direc = 1;
+    int i = 1*BOARD_MAX+(BOARD_MAX-1);
+    unsigned pat = 0x03;
     Traversal *traversal = new Traversal();
     traversal->initTraversal();
 
-    traversal->setWall(direc, BOARD_MAX-1, 1);
-    
-    ASSERT_EQ(0x22, traversal->getTraversalVal(BOARD_MAX-1, 1));
+    // Make sure index is correct
+    ASSERT_EQ(BOARD_MAX-1, i%BOARD_MAX);
+    ASSERT_EQ(1, i/BOARD_MAX);
+
+    // Set wall in North and East (00000011)
+    traversal->evalNodeWall(DIR_EAST, FRONT_THRESH+1, RIGHT_THRESH-1, 
+            LEFT_THRESH+1, i);
+    ASSERT_EQ(pat, traversal->getNode(i)->getWallPat());
 }
 
 TEST(Traversal, setWallAt_1_1_WhenDirecSouth)
 {
-    int direc = 2;
+    int i = 1*BOARD_MAX+1;
+    unsigned pat = 0x0E;
     Traversal *traversal = new Traversal();
     traversal->initTraversal();
 
-    traversal->setWall(direc, 1, 1);
-    
-    ASSERT_EQ(0x44, traversal->getTraversalVal(1, 1));
-    ASSERT_EQ(0x11, traversal->getTraversalVal(1, 2));
+    // Set wall in South, East, and West (00001110)
+    traversal->evalNodeWall(DIR_SOUTH, FRONT_THRESH+1, RIGHT_THRESH+1, 
+            LEFT_THRESH+1, i);
+    ASSERT_EQ(pat, traversal->getNode(i)->getWallPat());
 }
 
 TEST(Traversal, setWallAt_1_MAX_WhenDirecSouth)
 {
-    int direc = 2;
+    int i = (BOARD_MAX-1)*BOARD_MAX+1;
+    unsigned pat = 0x06;
     Traversal *traversal = new Traversal();
     traversal->initTraversal();
 
-    traversal->setWall(direc, 1, BOARD_MAX-1);
-    
-    ASSERT_EQ(0x44, traversal->getTraversalVal(1, BOARD_MAX-1));
+    // Make sure index is correct
+    ASSERT_EQ(1, i%BOARD_MAX);
+    ASSERT_EQ(BOARD_MAX-1, i/BOARD_MAX);
+
+    // Set wall in South and East (00000110)
+    traversal->evalNodeWall(DIR_SOUTH, FRONT_THRESH+1, RIGHT_THRESH-1, 
+            LEFT_THRESH+1, i);
+    ASSERT_EQ(pat, traversal->getNode(i)->getWallPat());
 }
 
 TEST(Traversal, setWallAt_1_1_WhenDirecWest)
 {
-    int direc = 3;
+    int i = 1*BOARD_MAX+1;
+    unsigned pat = 0x05;
     Traversal *traversal = new Traversal();
     traversal->initTraversal();
 
-    traversal->setWall(direc, 1, 1);
-    
-    ASSERT_EQ(0x88, traversal->getTraversalVal(1, 1));
-    ASSERT_EQ(0x22, traversal->getTraversalVal(0, 1));
+    // Set wall in North, and South (00000101)
+    traversal->evalNodeWall(DIR_WEST, FRONT_THRESH-1, RIGHT_THRESH+1, 
+            LEFT_THRESH+1, i);
+    ASSERT_EQ(pat, traversal->getNode(i)->getWallPat());
 }
 
 TEST(Traversal, setWallAt_0_1_WhenDirecWest)
 {
-    int direc = 3;
+    int i = 1*BOARD_MAX+0;
+    unsigned pat = 0x0D;
     Traversal *traversal = new Traversal();
     traversal->initTraversal();
 
-    traversal->setWall(direc, 0, 1);
-    
-    ASSERT_EQ(0x88, traversal->getTraversalVal(0, 1));
+    // Set wall in South, West, and North (00001101)
+    traversal->evalNodeWall(DIR_WEST, FRONT_THRESH+1, RIGHT_THRESH+1, 
+            LEFT_THRESH+1, i);
+    ASSERT_EQ(pat, traversal->getNode(i)->getWallPat());
 }
-
