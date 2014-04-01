@@ -159,3 +159,34 @@ TEST(Node, Wall_pattern_modified)
 
     ASSERT_EQ(pat, node->getWallPat());
 }
+
+TEST(Node, Edges_default)
+{
+    Node* node = new Node(0);
+    ASSERT_EQ(0, (node->getEdges()).size());
+}
+
+TEST(Node, Edges_clear)
+{
+    Node* node = new Node(0);
+    node->addEdge(new Edge());
+    node->addEdge(new Edge());
+    node->addEdge(new Edge());
+    ASSERT_EQ(3, (node->getEdges()).size());
+    node->clearAllEdges();
+    ASSERT_EQ(0, (node->getEdges()).size());
+}
+
+TEST(Node, Adding_edges)
+{
+    Node* node = new Node(0);
+    for(int i=0; i<8; i++)
+    {
+        node->addEdge(new Edge(0, i));
+    }
+    vector<Edge*> edges = node->getEdges();
+    for(int i=0; i<8; i++)
+    {
+        ASSERT_EQ(i, edges[i]->getTo());
+    }
+}

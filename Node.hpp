@@ -92,11 +92,18 @@ class Node{
     void addEdge(Edge* e);
 
     /*
+     * Clears all edges from the vector 
+     * Input: Nothing
+     * Output: Nothing
+     */
+    void clearAllEdges() { edges.clear(); }
+
+    /*
      * Returns the list of all connected edges
      * Input: Nothing
      * Output: List of all edges
      */
-    const vector<Edge*> &getEdges() const { return edges; }
+    vector<Edge*> getEdges() { return edges; }
 
     /*
      * Get the cost of the node
