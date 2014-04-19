@@ -4,31 +4,34 @@
       <target file="syscalls.o" lastModified="1457ae483a6">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="145791dee69"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="1457ae4828d">
+      <target file="stm32f4xx_gpio.o" lastModified="1457bc68538">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="145791dedfb"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="1457ae48838">
+      <target file="stm32f4xx_adc.o" lastModified="1457bc6845d">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="1457b7fa505"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="1457bc68a37">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="145791dee2a"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="1457ae4831a">
+      <target file="system_stm32f4xx.o" lastModified="1457bc685f3">
          <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="145791dedbd"/>
       </target>
       <target file="startup_stm32f4xx.o" lastModified="1457ae47f04">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="145791dedad"/>
       </target>
-      <target file="stm32f4xx_i2c.o" lastModified="1457ae484ee">
+      <target file="stm32f4xx_i2c.o" lastModified="1457bc686fc">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="145791dee1b"/>
       </target>
-      <target file="stm32f4xx_exti.o" lastModified="1457ae4858a">
+      <target file="stm32f4xx_exti.o" lastModified="1457bc687b7">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="145791dedfb"/>
       </target>
-      <target file="main.o" lastModified="1457b682dc9">
-         <source file="..\..\..\main.c" lastModified="1457b68235e"/>
+      <target file="main.o" lastModified="1457bcd04ff">
+         <source file="..\..\..\main.c" lastModified="1457bccf788"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="1457ae481d2">
+      <target file="stm32f4xx_rcc.o" lastModified="1457bc68335">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="145791dee1b"/>
       </target>
-      <target file="misc.o" lastModified="1457ae48664">
+      <target file="misc.o" lastModified="1457bc68863">
          <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="145791dedfb"/>
       </target>
    </processor>

@@ -13,6 +13,10 @@
       </source>
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="145791dedbd">
       </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="1457b7fa505">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
       <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="145791dedbd">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
@@ -29,7 +33,11 @@
       <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="145791dedcd">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_boot\stm32f4xx_conf.h" lastModified="145791e37f5">
+      <source file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h" lastModified="1457b7fa4f6">
+         <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\stm32f4xx_conf.h" lastModified="1457bba20a6">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_adc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>

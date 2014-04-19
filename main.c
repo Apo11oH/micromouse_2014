@@ -1,5 +1,6 @@
 #include <stm32f4xx.h>
 #include <stdio.h>
+#include "stm32f4xx_adc.h"
 
 #define TIM2_CLKFREQ 20000000UL
 
@@ -7,15 +8,17 @@ GPIO_InitTypeDef  GPIO_InitStruct;
 TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 TIM_OCInitTypeDef  TIM_OCInitStructure;
 NVIC_InitTypeDef NVIC_InitStructure;
+ADC_InitTypeDef ADC_InitStructure;
+ADC_CommonInitTypeDef ADC_CommonInitStruct;
 
 void initPins()
 {
 	initLED();
 	initMotors();
 	initPWM();
-	/*
 	initSensors();
-	initINTR();
+	/*
+	initIntr();
 	initXBee();
 	initCompass();
 	*/
@@ -37,8 +40,8 @@ void initLED()
 void initMotors()
 {
 	/**
-	 * PB13	(AIN1) and PB14 (BIN1) should be set high
-	 * PB12 (AIN2) and PB15 (BIN2) should be set low
+	 * PB13	(AIN1) and PB15 (BIN1) should be set high
+	 * PB12 (AIN2) and PB14 (BIN2) should be set low
 	 */
 	// Enable peripheral clock
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
@@ -79,6 +82,27 @@ void initPWM()
 	// Connect TIM3 pins to AF2
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource6, GPIO_AF_TIM3);
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_TIM3);
+}
+
+void initSensors()
+{
+	ADC_DeInit();
+	// Setup ADC_CommonInitType first
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
+	ADC_CommonInitStruct.ADC_Prescaler = ADC_Prescaler_Div8;
+	ADC_CommonInitStruct.ADC_Mode = ADC_Mode_Independent;
+	ADC_CommonInitStruct.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
+	ADC_CommonInitStruct.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
+	ADC_CommonInit(&ADC_CommonInitStruct);
+	// Setup ADC_InitStruct
+	ADC_InitStructure.ADC_Resolution = ADC_Resolution_12b;
+	ADC_InitStructure.ADC_ScanConvMode = DISABLE;
+	ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
+	ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;
+	ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T1_CC1;
+	ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
+	ADC_InitStructure.ADC_NbrOfConversion = 1;
+	ADC_Init(ADC1, &ADC_InitStructure);
 }
 
 void pwm_config(int period){
@@ -125,8 +149,8 @@ int main(void)
 
 	initPins();
 
-	GPIOB->BSRRL = 0x6000; //0110 0000 0000 0000
-	GPIOB->BSRRH = 0x9000; //1001 0000 0000 0000
+	GPIOB->BSRRL = 0xA000; //1010 0000 0000 0000
+	GPIOB->BSRRH = 0x5000; //0101 0000 0000 0000
 	pwm_config(100);
 
 	pwm_set_power(1,20);
