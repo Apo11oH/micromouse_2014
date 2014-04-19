@@ -75,7 +75,7 @@ void Traversal::printFloodFillCost()
 {
   for(int i=0; i<CELL_MAX; i++)
   {
-    if(i>0 && (i%BOARD_MAX == 0)){ cout << endl; } 
+    if(i>0 && (i%BOARD_MAX == 0)){ cout << endl; }
     printf("%4d", nodes[i]->getCost());
   }
   printf("\n");

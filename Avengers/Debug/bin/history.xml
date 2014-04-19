@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=Avengers.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\Avengers -TC:\CooCox\CoIDE\configuration\ProgramData\Avengers/arm-gcc-link.ld -g">
+      <target file="Avengers.elf" lastModified="14557d0d697">
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="14557bcd8a0"/>
+         <source file="..\obj\main.o" lastModified="14557d0d407"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="14557bcdd01"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="14557bcde2e"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="14557bcdf7d"/>
+         <source file="..\obj\syscalls.o" lastModified="14557bce095"/>
+         <source file="..\obj\stm32f4xx_i2c.o" lastModified="14557bce27b"/>
+         <source file="..\obj\stm32f4xx_exti.o" lastModified="14557bce40f"/>
+         <source file="..\obj\misc.o" lastModified="14557bce548"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="14557bce85a"/>
+      </target>
+   </processor>
+</history>
