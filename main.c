@@ -1,7 +1,7 @@
 #include <stm32f4xx.h>
 #include <stdio.h>
 
-#define TIM2_CLKFREQ 10000UL
+#define TIM2_CLKFREQ 20000000UL
 
 GPIO_InitTypeDef  GPIO_InitStruct;
 TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
@@ -129,8 +129,8 @@ int main(void)
 	GPIOB->BSRRH = 0x9000; //1001 0000 0000 0000
 	pwm_config(100);
 
-	pwm_set_power(1,50);
-	pwm_set_power(2,50);
+	pwm_set_power(1,20);
+	pwm_set_power(2,20);
 
     while(1)
     {
