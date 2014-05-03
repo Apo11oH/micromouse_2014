@@ -1,6 +1,12 @@
 #include <stm32f4xx.h>
 #include <stdio.h>
 #include "stm32f4xx_adc.h"
+#include "stm32f4xx_gpio.h"
+#include "stm32f4xx_i2c.h"
+#include "stm32f4xx_tim.h"
+#include "stm32f4xx_rcc.h"
+#include "stm32f4xx_exti.h"
+#include "i2c_stuff.h"
 
 #define TIM2_CLKFREQ 20000000UL
 
@@ -10,18 +16,21 @@ TIM_OCInitTypeDef  TIM_OCInitStructure;
 NVIC_InitTypeDef NVIC_InitStructure;
 ADC_InitTypeDef ADC_InitStructure;
 ADC_CommonInitTypeDef ADC_CommonInitStruct;
+I2C_InitTypeDef I2C_InitStructure;
 
-void initPins()
+void initAll()
 {
 	initLED();
-	initMotors();
+	initMotorPins();
 	initPWM();
-	initSensors();
+	//initI2C();
+	//initSensorPins();
+	//initSensors();
 	/*
 	initIntr();
 	initXBee();
 	initCompass();
-	*/
+	 */
 }
 
 void initLED()
@@ -37,7 +46,7 @@ void initLED()
 	GPIO_Init(GPIOB, &GPIO_InitStruct);
 }
 
-void initMotors()
+void initMotorPins()
 {
 	/**
 	 * PB13	(AIN1) and PB15 (BIN1) should be set high
@@ -52,15 +61,6 @@ void initMotors()
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_UP;
 	GPIO_Init(GPIOB, &GPIO_InitStruct);
-	/*
-	// Enable GPIO pins for Low
-	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_12 | GPIO_Pin_15;
-	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
-	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
-	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
-	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_DOWN;
-	GPIO_Init(GPIOB, &GPIO_InitStruct);
-	*/
 }
 
 void initPWM()
@@ -84,25 +84,20 @@ void initPWM()
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_TIM3);
 }
 
-void initSensors()
+void initSensorPins()
 {
-	ADC_DeInit();
-	// Setup ADC_CommonInitType first
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
-	ADC_CommonInitStruct.ADC_Prescaler = ADC_Prescaler_Div8;
-	ADC_CommonInitStruct.ADC_Mode = ADC_Mode_Independent;
-	ADC_CommonInitStruct.ADC_DMAAccessMode = ADC_DMAAccessMode_Disabled;
-	ADC_CommonInitStruct.ADC_TwoSamplingDelay = ADC_TwoSamplingDelay_5Cycles;
-	ADC_CommonInit(&ADC_CommonInitStruct);
-	// Setup ADC_InitStruct
-	ADC_InitStructure.ADC_Resolution = ADC_Resolution_12b;
-	ADC_InitStructure.ADC_ScanConvMode = DISABLE;
-	ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
-	ADC_InitStructure.ADC_ExternalTrigConvEdge = ADC_ExternalTrigConvEdge_None;
-	ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_T1_CC1;
-	ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-	ADC_InitStructure.ADC_NbrOfConversion = 1;
-	ADC_Init(ADC1, &ADC_InitStructure);
+	// Enable TIM3 clock
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
+	// Enable GPIOA & GPIOC clock
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA|RCC_AHB1Periph_GPIOC, ENABLE);
+	// Enable Receiver
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_1 | GPIO_Pin_2 | GPIO_Pin_3;
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_2MHz;
+	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
+	GPIO_Init(GPIOA, &GPIO_InitStruct);
+	// Enable Emitter
 }
 
 void pwm_config(int period){
@@ -137,38 +132,45 @@ void pwm_config(int period){
 
 void pwm_set_power(uint16_t ch, uint16_t dutycycle){
 	switch(ch){
-		case 1: TIM3->CCR1 = dutycycle; break;
-		case 2: TIM3->CCR2 = dutycycle; break;
-		default: break;
+	case 1: TIM3->CCR1 = dutycycle; break;
+	case 2: TIM3->CCR2 = dutycycle; break;
+	default: break;
 	}
 }
 
+
 int main(void)
 {
-	uint16_t pulse_width = 0;
+	int count = 0xFFFFFFFFFFFF;
+	uint16_t pulse_width = 20;
 
-	initPins();
+	initAll();
 
-	GPIOB->BSRRL = 0xA000; //1010 0000 0000 0000
+	GPIOB->BSRRL = 0xAC18; //1010 1100 0001 1000
 	GPIOB->BSRRH = 0x5000; //0101 0000 0000 0000
+	while(count-- > 0)
+	{
+	}
 	pwm_config(100);
 
-	pwm_set_power(1,20);
-	pwm_set_power(2,20);
+	pwm_set_power(1,15);
+	pwm_set_power(2,15);
+	GPIOB->BSRRH = 0x5C18; //0101 0000 0000 0000
 
-    while(1)
-    {
-    	/*
-    	pwm_set_power(1,pulse_width++);
-    	pwm_set_power(2,pulse_width++);
-        if (pulse_width > 800)
+	while(1)
+	{
+		//pwm_set_power(1,pulse_width++);
+		//pwm_set_power(2,pulse_width++);
+
+		/*
+        if (pulse_width > 50)
         {
         	GPIO_ToggleBits(GPIOB, GPIO_Pin_3);
         	GPIO_ToggleBits(GPIOB, GPIO_Pin_4);
         	GPIO_ToggleBits(GPIOB, GPIO_Pin_10);
         	GPIO_ToggleBits(GPIOB, GPIO_Pin_11);
-        	pulse_width = 0;
+			pulse_width = 0;
         }
-        */
-    }
+		 */
+	}
 }

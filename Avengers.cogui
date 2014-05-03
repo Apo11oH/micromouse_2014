@@ -14,25 +14,30 @@
 <part id="1"/>
 <part id="2"/>
 <part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_conf.h" partName="stm32f4xx_conf.h" path="C:/CooCox/CoIDE/workspace/Avengers/cmsis_boot/stm32f4xx_conf.h" title="stm32f4xx_conf.h" tooltip="C:/CooCox/CoIDE/workspace/Avengers/cmsis_boot/stm32f4xx_conf.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avengers/cmsis_boot/stm32f4xx_conf.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1937" selectionTopPixel="947"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" partName="stm32f4xx.h" path="C:/CooCox/CoIDE/workspace/Avengers/cmsis_boot/stm32f4xx.h" title="stm32f4xx.h" tooltip="C:/CooCox/CoIDE/workspace/Avengers/cmsis_boot/stm32f4xx.h" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avengers/cmsis_boot/stm32f4xx.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2958" selectionTopPixel="1144"/>
-</editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Kenny/Desktop/micromouse_2014/main.c" title="main.c" tooltip="C:/Users/Kenny/Desktop/micromouse_2014/main.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Kenny/Desktop/micromouse_2014/main.c" title="main.c" tooltip="C:/Users/Kenny/Desktop/micromouse_2014/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avengers/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3095" selectionTopPixel="1678"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="556" selectionTopPixel="1416"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" title="main.c" tooltip="C:\CooCox\CoIDE\workspace\Test\main.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" uri="file:/C:/CooCox/CoIDE/workspace/Test/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="5814" selectionTopPixel="3025"/>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="i2c_stuff.c" partName="i2c_stuff.c" path="C:/Users/Kenny/Desktop/micromouse_2014/i2c_stuff.c" title="i2c_stuff.c" tooltip="C:/Users/Kenny/Desktop/micromouse_2014/i2c_stuff.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avengers/i2c_stuff.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="107" selectionOffset="2" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="i2c_stuff.h" partName="i2c_stuff.h" path="C:/Users/Kenny/Desktop/micromouse_2014/i2c_stuff.h" title="i2c_stuff.h" tooltip="C:/Users/Kenny/Desktop/micromouse_2014/i2c_stuff.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avengers/i2c_stuff.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="120" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="adc.h" partName="adc.h" path="C:/Users/Kenny/Desktop/micromouse_2014/adc.h" title="adc.h" tooltip="C:/Users/Kenny/Desktop/micromouse_2014/adc.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avengers/adc.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="79" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="adc.c" partName="adc.c" path="C:/Users/Kenny/Desktop/micromouse_2014/adc.c" title="adc.c" tooltip="C:/Users/Kenny/Desktop/micromouse_2014/adc.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Avengers/adc.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="287" selectionTopPixel="135"/>
 </editor>
 </editors>
 <views>
@@ -40,13 +45,9 @@
 <viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
 <expanded>
 <element path="/Avengers"/>
-<element path="/Avengers/cmsis"/>
-<element path="/Avengers/cmsis_boot"/>
-<element path="/Avengers/cmsis_boot/startup"/>
-<element path="/Avengers/syscalls"/>
 </expanded>
 <selection>
-<element path="/Avengers"/>
+<element path="/Avengers/syscalls"/>
 </selection>
 </viewState>
 </view>
@@ -95,10 +96,15 @@
 <hide_toolbar_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
 <view id="org.coocox.component.ui.ComponentView"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
-<view id="org.coocox.component.ui.Help"/>
-<view id="org.coocox.builder.ui.MoreExampleView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
-<fastViewBars/>
+<fastViewBars>
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@6a18bf" orientation="512" selectedTabId="org.coocox.component.ui.Help" style="0">
+<fastViews>
+<view id="org.coocox.component.ui.Help" ratio="0.3"/>
+<view id="org.coocox.builder.ui.MoreExampleView" ratio="0.3"/>
+</fastViews>
+</fastViewBar>
+</fastViewBars>
 <layout>
 <mainWindow>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@b7be21">
@@ -130,17 +136,14 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
-<info folder="true" part="org.eclipse.ui.internal.ViewStack@6a18bf" ratio="0.71905696" ratioLeft="732" ratioRight="286" relationship="2" relative="org.eclipse.ui.internal.ViewStack@16b88ce">
-<folder activePageID="org.coocox.builder.ui.MoreExampleView" appearance="2" expanded="2">
-<page content="org.coocox.component.ui.Help" label="Help"/>
-<page content="org.coocox.builder.ui.MoreExampleView" label="More Examples"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@6a18bf" ratio="0.66604125" ratioLeft="710" ratioRight="356" relationship="2" relative="org.eclipse.ui.internal.ViewStack@16b88ce">
+<folder appearance="2" expanded="2">
+<page content="org.coocox.component.ui.Help" label="LabelNotFound"/>
+<page content="org.coocox.builder.ui.MoreExampleView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
 <page content="org.coocox.coassistant.view.CoAssistantView" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="1"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.4499205" ratioLeft="283" ratioRight="346" relationship="4" relative="org.eclipse.ui.internal.ViewStack@16b88ce"/>
@@ -160,161 +163,170 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/main.c"/>
-<editor factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" uri="file:/C:/CooCox/CoIDE/workspace/Test/main.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/i2c_stuff.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/i2c_stuff.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/adc.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/adc.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/cmsis_lib/include/misc.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/cmsis_lib/include/stm32f4xx_rcc.h"/>
 <editor factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser">
-<subPage/>
-</editor>
-<editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage">
-<org.coocox.welcome.ui.WelcomePage/>
-</editor>
-<editor factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser">
-<subPage/>
+<subPage horizontalPosition="0" selectedItemId="514" subPageIndex="2" verticalPosition="261"/>
 </editor>
 <editor factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor">
 <org.coocox.builder.ui.editors.ConfigEditor/>
 </editor>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/adc.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/adc.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/i2c_stuff.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/i2c_stuff.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/adc.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Avengers/adc.c"/>
 </editors>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="187" y="199"/>
+<item historyLabel="i2c_stuff.h" index="2">
+<position info="not_deleted" x="143" y="0"/>
+</item>
+<item historyLabel="i2c_stuff.c" index="1">
+<position info="not_deleted" x="558" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2723" y="0"/>
+<position info="not_deleted" x="625" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="51" y="0"/>
+</item>
+<item historyLabel="i2c_stuff.c" index="1">
+<position info="not_deleted" x="558" y="0"/>
+</item>
+<item historyLabel="i2c_stuff.h" index="2">
+<position info="not_deleted" x="120" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="51" y="0"/>
+</item>
+<item historyLabel="i2c_stuff.h" index="2">
+<position info="not_deleted" x="120" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="51" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="44" y="0"/>
+</item>
+<item historyLabel="i2c_stuff.c" index="1">
+<position info="not_deleted" x="2" y="107"/>
+</item>
+<item historyLabel="i2c_stuff.h" index="2">
+<position info="not_deleted" x="120" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="44" y="0"/>
+</item>
+<item historyLabel="adc.c" index="4">
+<position info="not_deleted" x="1826" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="81" y="0"/>
+</item>
+<item historyLabel="adc.c" index="4">
+<position info="not_deleted" x="210" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="206" y="0"/>
+<position info="not_deleted" x="127" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="0" y="22"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="22" y="0"/>
+<item historyLabel="misc.h" index="5">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
+<position info="not_deleted" x="127" y="0"/>
+</item>
+<item historyLabel="stm32f4xx_rcc.h" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="127" y="0"/>
+</item>
+<item historyLabel="Repository" index="7"/>
+<item historyLabel="adc.c" index="4">
+<position info="not_deleted" x="210" y="0"/>
+</item>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="42" y="28"/>
+</item>
+<item historyLabel="adc.c" index="4">
+<position info="not_deleted" x="210" y="0"/>
+</item>
+<item historyLabel="adc.c" index="4">
 <position/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="221" y="0"/>
+<position info="not_deleted" x="2958" y="0"/>
+</item>
+<item historyLabel="adc.c" index="4">
+<position info="not_deleted" x="1625" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="81" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="44" y="0"/>
+</item>
+<item historyLabel="adc.c" index="4">
+<position info="not_deleted" x="1806" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="237" y="0"/>
+<position info="not_deleted" x="475" y="45"/>
+</item>
+<item historyLabel="adc.c" index="4">
+<position info="not_deleted" x="636" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="44" y="0"/>
+</item>
+<item historyLabel="adc.c" index="4">
+<position info="not_deleted" x="636" y="0"/>
+</item>
+<item historyLabel="i2c_stuff.h" index="2">
+<position info="not_deleted" x="120" y="0"/>
+</item>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="91" y="0"/>
+</item>
+<item historyLabel="Configuration" index="8"/>
+<item historyLabel="adc.h" index="3">
+<position info="not_deleted" x="89" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="268" y="0"/>
+<position info="not_deleted" x="475" y="45"/>
+</item>
+<item historyLabel="adc.c" index="9">
+<position info="not_deleted" x="636" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="282" y="0"/>
+<position info="not_deleted" x="4400" y="0"/>
+</item>
+<item historyLabel="adc.c" index="9">
+<position info="not_deleted" x="636" y="0"/>
+</item>
+<item historyLabel="adc.h" index="10">
+<position info="not_deleted" x="79" y="0"/>
+</item>
+<item historyLabel="adc.c" index="9">
+<position info="not_deleted" x="636" y="0"/>
+</item>
+<item historyLabel="i2c_stuff.h" index="11">
+<position info="not_deleted" x="120" y="0"/>
+</item>
+<item historyLabel="i2c_stuff.c" index="12">
+<position info="not_deleted" x="2" y="107"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="299" y="0"/>
+<position info="not_deleted" x="4400" y="0"/>
 </item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="748" y="0"/>
+<item historyLabel="adc.h" index="13">
+<position info="not_deleted" x="79" y="0"/>
 </item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="623" y="425"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="410" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="1606" y="809"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="410" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1408" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="2446" y="1111"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1262" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="3255" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="980" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="3255" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="980" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="4629" y="1129"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2721" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="5762" y="255"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2696" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="5814" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2696" y="0"/>
-</item>
-<item historyLabel="main.c" index="1">
-<position info="not_deleted" x="5814" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2696" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2631" y="4"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2696" y="0"/>
-</item>
-<item historyLabel="Repository" index="2"/>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2544" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="2533" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1506" y="66"/>
-</item>
-<item historyLabel="welcome" index="3"/>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="325" y="0"/>
-</item>
-<item historyLabel="Repository" index="4"/>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="325" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="73" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="4136" y="2"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="288" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="845" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1666" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="1627" y="0"/>
-</item>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="292" y="13"/>
-</item>
-<item historyLabel="Configuration" index="5"/>
-<item active="true" historyLabel="main.c" index="0">
-<position info="not_deleted" x="825" y="0"/>
+<item active="true" historyLabel="adc.c" index="14">
+<position info="not_deleted" x="521" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -323,19 +335,26 @@
 <actionBarAdvisor/>
 </window>
 <mruList>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.builder.ui.editors.ConfigEditor" name="" tooltip="">
-<persistable>
-<org.coocox.builder.ui.editors.ConfigEditor/>
-</persistable>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_rcc.h" tooltip="Avengers/cmsis_lib/include/stm32f4xx_rcc.h">
+<persistable path="/Avengers/cmsis_lib/include/stm32f4xx_rcc.h"/>
 </file>
-<file factoryID="org.coocox.builder.ui.persistent.PersistentElementFactory" id="org.coocox.welcome.ui.WelcomePage" name="" tooltip="">
-<persistable>
-<org.coocox.welcome.ui.WelcomePage/>
-</persistable>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="misc.h" tooltip="Avengers/cmsis_lib/include/misc.h">
+<persistable path="/Avengers/cmsis_lib/include/misc.h"/>
 </file>
-<file factoryID="org.coocox.component.ui.editors.repository.RepositoryElementFactory" id="org.coocox.builder.ui.editors.repository.RepositoryBrowser" name="Repository" tooltip="Repository">
-<persistable>&#x0A;<subPage/>
-</persistable>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="adc.c" tooltip="Avengers/adc.c">
+<persistable path="/Avengers/adc.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="adc.h" tooltip="Avengers/adc.h">
+<persistable path="/Avengers/adc.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_exti.h" tooltip="Avengers/cmsis_lib/include/stm32f4xx_exti.h">
+<persistable path="/Avengers/cmsis_lib/include/stm32f4xx_exti.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="i2c_stuff.h" tooltip="Avengers/i2c_stuff.h">
+<persistable path="/Avengers/i2c_stuff.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="i2c_stuff.c" tooltip="Avengers/i2c_stuff.c">
+<persistable path="/Avengers/i2c_stuff.c"/>
 </file>
 <file factoryID="org.eclipse.ui.ide.FileStoreEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" tooltip="C:\CooCox\CoIDE\workspace\Test\main.c">
 <persistable uri="file:/C:/CooCox/CoIDE/workspace/Test/main.c"/>
@@ -355,23 +374,11 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="Avengers/cmsis_boot/system_stm32f4xx.c">
 <persistable path="/Avengers/cmsis_boot/system_stm32f4xx.c"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_conf.h" tooltip="Avengers/cmsis_boot/stm32f4xx_conf.h">
-<persistable path="/Avengers/cmsis_boot/stm32f4xx_conf.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_rcc.h" tooltip="Avengers/cmsis_lib/include/stm32f4xx_rcc.h">
+<persistable path="/Avengers/cmsis_lib/include/stm32f4xx_rcc.h"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="startup_stm32f4xx.c" tooltip="Test/cmsis_boot/startup/startup_stm32f4xx.c">
-<persistable path="/Test/cmsis_boot/startup/startup_stm32f4xx.c"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx_conf.h" tooltip="Test/cmsis_boot/stm32f4xx_conf.h">
-<persistable path="/Test/cmsis_boot/stm32f4xx_conf.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.cpp" tooltip="Test/main.cpp">
-<persistable path="/Test/main.cpp"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="stm32f4xx.h" tooltip="Test/cmsis_boot/stm32f4xx.h">
-<persistable path="/Test/cmsis_boot/stm32f4xx.h"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="misc.h" tooltip="Test/cmsis_lib/include/misc.h">
-<persistable path="/Test/cmsis_lib/include/misc.h"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="system_stm32f4xx.c" tooltip="Avengers/cmsis_boot/system_stm32f4xx.c">
+<persistable path="/Avengers/cmsis_boot/system_stm32f4xx.c"/>
 </file>
 </mruList>
 </workbench>

@@ -1,37 +1,43 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F405RG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -DSUPPORT_CPLUSPLUS -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014\cmsis_lib\include -I..\..\..\..\..\Users\Kenny\Desktop -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014\cmsis_lib -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014 -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014\cmsis_boot -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014\cmsis">
-      <target file="syscalls.o" lastModified="1457ae483a6">
+   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F405RG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -DSUPPORT_CPLUSPLUS -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014\cmsis_lib\include -I..\..\..\..\..\Users\Kenny\Desktop -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014\cmsis_lib -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014 -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014\cmsis_boot -I..\..\..\..\..\Users\Kenny -I..\..\..\..\..\Users\Kenny\Desktop\micromouse_2014\cmsis">
+      <target file="syscalls.o" lastModified="1459fbf9200">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="145791dee69"/>
       </target>
-      <target file="stm32f4xx_gpio.o" lastModified="1457bc68538">
+      <target file="stm32f4xx_gpio.o" lastModified="1459fbf90b1">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="145791dedfb"/>
       </target>
-      <target file="stm32f4xx_adc.o" lastModified="1457bc6845d">
+      <target file="adc.o" lastModified="1459fd56424">
+         <source file="..\..\..\adc.c" lastModified="1459fd55dd6"/>
+      </target>
+      <target file="stm32f4xx_adc.o" lastModified="1459fbf8f3a">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_adc.c" lastModified="1457b7fa505"/>
       </target>
-      <target file="stm32f4xx_tim.o" lastModified="1457bc68a37">
+      <target file="i2c_stuff.o" lastModified="1459fd510a6">
+         <source file="..\..\..\i2c_stuff.c" lastModified="1459fc0482a"/>
+      </target>
+      <target file="stm32f4xx_tim.o" lastModified="1459fbf9692">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="145791dee2a"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="1457bc685f3">
+      <target file="system_stm32f4xx.o" lastModified="1459fbf915b">
          <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="145791dedbd"/>
       </target>
-      <target file="startup_stm32f4xx.o" lastModified="1457ae47f04">
+      <target file="startup_stm32f4xx.o" lastModified="1459fbf8b07">
          <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="145791dedad"/>
       </target>
-      <target file="stm32f4xx_i2c.o" lastModified="1457bc686fc">
+      <target file="stm32f4xx_i2c.o" lastModified="1459fbf9327">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_i2c.c" lastModified="145791dee1b"/>
       </target>
-      <target file="stm32f4xx_exti.o" lastModified="1457bc687b7">
+      <target file="stm32f4xx_exti.o" lastModified="1459fbf93ef">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="145791dedfb"/>
       </target>
-      <target file="main.o" lastModified="1457bcd04ff">
-         <source file="..\..\..\main.c" lastModified="1457bccf788"/>
+      <target file="main.o" lastModified="1459fd50fed">
+         <source file="..\..\..\main.c" lastModified="1459fcf005a"/>
       </target>
-      <target file="stm32f4xx_rcc.o" lastModified="1457bc68335">
+      <target file="stm32f4xx_rcc.o" lastModified="1459fbf8dff">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="145791dee1b"/>
       </target>
-      <target file="misc.o" lastModified="1457bc68863">
+      <target file="misc.o" lastModified="1459fbf94a3">
          <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="145791dedfb"/>
       </target>
    </processor>
